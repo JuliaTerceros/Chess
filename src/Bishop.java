@@ -1,5 +1,7 @@
 public class Bishop extends Piece {
-    public Bishop(String pos, ChessColor color) {
-        super(pos, color);
+
+    public Bishop(char symbol, ChessColor color, String id) {
+        super(symbol, color, id);
     }
+
 }

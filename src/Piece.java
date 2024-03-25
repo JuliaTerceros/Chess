@@ -3,10 +3,16 @@ public abstract class Piece {
     //color
     //position
     ChessColor color;
-    String pos;
+    String id;
+    char symbol;
 
-    public Piece (String pos, ChessColor color) {
+    public Piece (char symbol, ChessColor color, String id) {
+        this.symbol = symbol;
         this.color = color;
-        this.pos = pos;
+        this.id = id;
+    }
+
+    public String toString(){
+        return Character.toString(symbol);
     }
 }
