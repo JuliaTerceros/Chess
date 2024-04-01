@@ -6,6 +6,7 @@ public abstract class Piece {
     String id;
     char symbol;
 
+
     public Piece (char symbol, ChessColor color, String id) {
         this.symbol = symbol;
         this.color = color;
@@ -15,4 +16,6 @@ public abstract class Piece {
     public String toString(){
         return Character.toString(symbol);
     }
+
+    public abstract boolean canMove(Move move);
 }

@@ -6,40 +6,40 @@ public class Board {
 
     public Board(){
         this.board[0][0] = new Rook('♜',ChessColor.Black, "rookQB"); //rook
-        this.board[0][1] = new Knight('\u265E',ChessColor.Black, "knightQB"); //knight
-        this.board[0][2] = new Bishop('\u265D',ChessColor.Black, "bishopQB"); //bishop
-        this.board[0][3] = new Queen('\u265B',ChessColor.Black, "queenB"); //queen
-        this.board[0][4] = new King('\u265A',ChessColor.Black, "kingB");// king
-        this.board[0][5] = new Bishop('\u265D',ChessColor.Black, "bishopKB"); // bishop
-        this.board[0][6] = new Knight('\u265E',ChessColor.Black, "knightKB"); // knight
-        this.board[0][7] = new Rook('\u265C',ChessColor.Black, "rookKB"); //rook
+        this.board[0][1] = new Knight('♞',ChessColor.Black, "knightQB"); //knight
+        this.board[0][2] = new Bishop('♝',ChessColor.Black, "bishopQB"); //bishop
+        this.board[0][3] = new Queen('♛',ChessColor.Black, "queenB"); //queen
+        this.board[0][4] = new King('♚',ChessColor.Black, "kingB");// king
+        this.board[0][5] = new Bishop('♝',ChessColor.Black, "bishopKB"); // bishop
+        this.board[0][6] = new Knight('♞',ChessColor.Black, "knightKB"); // knight
+        this.board[0][7] = new Rook('♜',ChessColor.Black, "rookKB"); //rook
 
-        this.board[1][0] = new Pawn('\u265F', ChessColor.Black, "pawnAB");
-        this.board[1][1] = new Pawn('\u265F', ChessColor.Black, "pawnBB");
-        this.board[1][2] = new Pawn('\u265F', ChessColor.Black, "pawnCB");
-        this.board[1][3] = new Pawn('\u265F', ChessColor.Black, "pawnDB");
-        this.board[1][4] = new Pawn('\u265F', ChessColor.Black, "pawnEB");
-        this.board[1][5] = new Pawn('\u265F', ChessColor.Black,"pawnFB");
-        this.board[1][6] = new Pawn('\u265F', ChessColor.Black, "pawnGB");
-        this.board[1][7] = new Pawn('\u265F', ChessColor.Black, "pawnHB");
+        this.board[1][0] = new Pawn('♟', ChessColor.Black, "pawnAB");
+        this.board[1][1] = new Pawn('♟', ChessColor.Black, "pawnBB");
+        this.board[1][2] = new Pawn('♟', ChessColor.Black, "pawnCB");
+        this.board[1][3] = new Pawn('♟', ChessColor.Black, "pawnDB");
+        this.board[1][4] = new Pawn('♟', ChessColor.Black, "pawnEB");
+        this.board[1][5] = new Pawn('♟', ChessColor.Black,"pawnFB");
+        this.board[1][6] = new Pawn('♟', ChessColor.Black, "pawnGB");
+        this.board[1][7] = new Pawn('♟', ChessColor.Black, "pawnHB");
 
-        this.board[7][0] = new Rook('\u2656',ChessColor.White, "rookQW");
-        this.board[7][1] = new Knight('\u2658',ChessColor.White, "knightQW");
-        this.board[7][2] = new Bishop('\u2657',ChessColor.White, "bishopQW");
-        this.board[7][3] = new Queen('\u2655',ChessColor.White, "queenW");
-        this.board[7][4] = new King('\u2654',ChessColor.White, "kingW");
-        this.board[7][5] = new Bishop('\u2657',ChessColor.White, "bishopKW");
-        this.board[7][6] = new Knight('\u2658',ChessColor.White, "knightKW");
-        this.board[7][7] = new Rook('\u2656',ChessColor.White, "rookKW");
+        this.board[7][0] = new Rook('♖',ChessColor.White, "rookQW");
+        this.board[7][1] = new Knight('♘',ChessColor.White, "knightQW");
+        this.board[7][2] = new Bishop('♗',ChessColor.White, "bishopQW");
+        this.board[7][3] = new Queen('♕',ChessColor.White, "queenW");
+        this.board[7][4] = new King('♔',ChessColor.White, "kingW");
+        this.board[7][5] = new Bishop('♗',ChessColor.White, "bishopKW");
+        this.board[7][6] = new Knight('♘',ChessColor.White, "knightKW");
+        this.board[7][7] = new Rook('♖',ChessColor.White, "rookKW");
 
-        this.board[6][0] = new Pawn('\u2659', ChessColor.White, "pawnAW");
-        this.board[6][1] = new Pawn('\u2659', ChessColor.White, "pawnBW");
-        this.board[6][2] = new Pawn('\u2659', ChessColor.White, "pawnCW");
-        this.board[6][3] = new Pawn('\u2659', ChessColor.White, "pawnDW");
-        this.board[6][4] = new Pawn('\u2659', ChessColor.White, "pawnEW");
-        this.board[6][5] = new Pawn('\u2659', ChessColor.White, "pawnFW");
-        this.board[6][6] = new Pawn('\u2659', ChessColor.White, "pawnGW");
-        this.board[6][7] = new Pawn('\u2659', ChessColor.White, "pawnHW");
+        this.board[6][0] = new Pawn('♙', ChessColor.White, "pawnAW");
+        this.board[6][1] = new Pawn('♙', ChessColor.White, "pawnBW");
+        this.board[6][2] = new Pawn('♙', ChessColor.White, "pawnCW");
+        this.board[6][3] = new Pawn('♙', ChessColor.White, "pawnDW");
+        this.board[6][4] = new Pawn('♙', ChessColor.White, "pawnEW");
+        this.board[6][5] = new Pawn('♙', ChessColor.White, "pawnFW");
+        this.board[6][6] = new Pawn('♙', ChessColor.White, "pawnGW");
+        this.board[6][7] = new Pawn('♙', ChessColor.White, "pawnHW");
 
     }
 
@@ -59,7 +59,7 @@ public class Board {
 
 //Displays Board
 
-    public void DisplayBoard(){
+    public String displayBoard(){
 //        System.out.println("|---|---|---|---|---|---|---|---|");
 //        System.out.println("| "+ this.board[0][0].toString() + " | " + this.board[0][1].toString() + " | " + this.board[0][2].toString() + " | " + this.board[0][3].toString()+ " | " + this.board[0][4].toString() + " | " + this.board[0][5].toString()+ " | "+ this.board[0][6].toString() + " | "+ this.board[0][7].toString() +" |");
 //        System.out.println("|-------------------------------|");
@@ -78,19 +78,28 @@ public class Board {
 //        System.out.println("| "+ this.board[7][0].toString() + " | " + this.board[7][1].toString() + " | " + this.board[7][2].toString() + " | " + this.board[7][3].toString()+ " | " + this.board[7][4].toString() + " | " + this.board[7][5].toString()+ " | "+ this.board[7][6].toString() + " | "+ this.board[7][7].toString() +" |");
 //        System.out.println("|---|---|---|---|---|---|---|---|");
 
+        StringBuilder stringOfBoard = new StringBuilder();
 
         for (int row = 0; row < 8; row++){
             for (int column = 0; column < 8; column++){
                 if (this.board[row][column] != null){
-                    System.out.print(" " + this.board[row][column].toString() + " " );
+                    stringOfBoard.append("\u2009").append(this.board[row][column].toString()).append('\u2008');
                 }
                 else{
-                    System.out.print(" ");
+                    stringOfBoard.append("\u200A\u200A\u2008.\u2009\u200A");
                 }
             }
-            System.out.println();
+            stringOfBoard.append("\n");
         }
+        return stringOfBoard.toString();
     }
+
+    public void placePiece(int x, int y, Piece piece){
+        this.board[x][y]= piece;
+
+    }
+
+    //TO DO: If pawn reaches end, change to queen
 
     //apply move
 
