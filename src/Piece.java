@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Piece {
 
     //color
@@ -18,4 +20,11 @@ public abstract class Piece {
     }
 
     public abstract boolean canMove(Move move);
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Piece piece)) return false;
+        return this.symbol == piece.symbol && this.color == piece.color && this.id.equals(piece.id);
+    }
 }

@@ -4,7 +4,7 @@ public class Board {
     //CHange string to pieces
     public Piece[][] board = new Piece[8][8];
 
-    public Board(){
+    public void setUpBoard(){
         this.board[0][0] = new Rook('♜',ChessColor.Black, "rookQB"); //rook
         this.board[0][1] = new Knight('♞',ChessColor.Black, "knightQB"); //knight
         this.board[0][2] = new Bishop('♝',ChessColor.Black, "bishopQB"); //bishop
@@ -44,15 +44,15 @@ public class Board {
     }
 
 
+
+
     //isEmptyPosition(int x, int y)
     public boolean isEmptyPosition(int x, int y) {
-        if (!(this.board[x -1][y -1].equals(" "))){
-            return false;
+        return this.board[x][y]==null;
+    }
+    //TO DO: WOrking on getting piece from board
+    public Piece getPiece(){
 
-        }
-        else  {
-            return true;
-        }
     }
 
 
@@ -105,7 +105,7 @@ public class Board {
 
     //isThereClearPath
     public boolean isThereClearPathHorizontal(int startRow , int startCol , int endRow , int endCol  ) {
-        for (int i = startCol ; i < endCol ; i++) {
+        for (int i = Math.min(startCol, endCol) ; i < Math.max(startCol, endCol); i++) {
             if(this.board[startRow][i+1]!=null ){
                 return false;
             }
@@ -113,9 +113,49 @@ public class Board {
       return true;
     }
     public boolean isThereClearPathVertical(int startRow , int startCol , int endRow , int endCol  ) {
-        for (int i = startRow ; i < endRow ; i++) {
+        for (int i = Math.min(startRow, endRow) ; i < Math.max(startRow, endRow) ; i++) {
             if(this.board[i+1][startCol]!=null ){
                 return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isThereClearPathDiagonal(int startRow, int startCol, int endRow, int endCol ){
+        int l = startCol;
+        if (startRow > endRow && startCol > endCol){
+            for (int i = startRow ; i > endRow ; i--){
+                if(this.board[i-1][l-1]!=null ){
+                    return false;
+                }
+                l--;
+            }
+        }
+
+        if (startRow > endRow && startCol < endCol){
+            for (int i = startRow ; i > endRow ; i--){
+                if(this.board[i-1][l+1]!=null ){
+                    return false;
+                }
+                l++;
+            }
+        }
+
+        if (startRow < endRow && startCol < endCol){
+            for (int i = startRow ; i < endRow ; i++){
+                if(this.board[i+1][l+1]!=null ){
+                    return false;
+                }
+                l++;
+            }
+        }
+
+        if (startRow < endRow && startCol > endCol){
+            for (int i = startRow ; i < endRow ; i++){
+                if(this.board[i+1][l-1]!=null ){
+                    return false;
+                }
+                l--;
             }
         }
         return true;
