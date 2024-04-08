@@ -51,7 +51,8 @@ public class Board {
         return this.board[x][y]==null;
     }
     //TO DO: WOrking on getting piece from board
-    public Piece getPiece(){
+    public Piece getPiece(int row, int col){
+        return board[row][col];
 
     }
 
@@ -105,7 +106,7 @@ public class Board {
 
     //isThereClearPath
     public boolean isThereClearPathHorizontal(int startRow , int startCol , int endRow , int endCol  ) {
-        for (int i = Math.min(startCol, endCol) ; i < Math.max(startCol, endCol); i++) {
+        for (int i = Math.min(startCol, endCol) ; i < Math.max(startCol, endCol)-1; i++) {
             if(this.board[startRow][i+1]!=null ){
                 return false;
             }
@@ -113,7 +114,7 @@ public class Board {
       return true;
     }
     public boolean isThereClearPathVertical(int startRow , int startCol , int endRow , int endCol  ) {
-        for (int i = Math.min(startRow, endRow) ; i < Math.max(startRow, endRow) ; i++) {
+        for (int i = Math.min(startRow, endRow) ; i < Math.max(startRow, endRow)-1 ; i++) {
             if(this.board[i+1][startCol]!=null ){
                 return false;
             }
@@ -121,10 +122,10 @@ public class Board {
         return true;
     }
 
-    public boolean isThereClearPathDiagonal(int startRow, int startCol, int endRow, int endCol ){
+    public boolean isThereClearPathDiagonal(int startRow, int startCol, int endRow, int endCol){
         int l = startCol;
         if (startRow > endRow && startCol > endCol){
-            for (int i = startRow ; i > endRow ; i--){
+            for (int i = startRow ; i > endRow-1 ; i--){
                 if(this.board[i-1][l-1]!=null ){
                     return false;
                 }
@@ -133,7 +134,7 @@ public class Board {
         }
 
         if (startRow > endRow && startCol < endCol){
-            for (int i = startRow ; i > endRow ; i--){
+            for (int i = startRow ; i > endRow-1 ; i--){
                 if(this.board[i-1][l+1]!=null ){
                     return false;
                 }
@@ -142,7 +143,7 @@ public class Board {
         }
 
         if (startRow < endRow && startCol < endCol){
-            for (int i = startRow ; i < endRow ; i++){
+            for (int i = startRow ; i < endRow-1 ; i++){
                 if(this.board[i+1][l+1]!=null ){
                     return false;
                 }
@@ -151,7 +152,7 @@ public class Board {
         }
 
         if (startRow < endRow && startCol > endCol){
-            for (int i = startRow ; i < endRow ; i++){
+            for (int i = startRow ; i < endRow-1 ; i++){
                 if(this.board[i+1][l-1]!=null ){
                     return false;
                 }
