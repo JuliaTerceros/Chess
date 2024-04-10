@@ -105,6 +105,18 @@ public class Board {
     //apply move
 
     //isThereClearPath
+
+    public boolean isThereClearPath(int startRow , int startCol , int endRow , int endCol){
+        if ( startCol == endCol && startRow != endRow){
+             return isThereClearPathVertical(startRow ,startCol ,endRow , endCol);
+        }
+        else if (startRow == endRow && startCol != endCol ){
+             return isThereClearPathHorizontal(startRow ,startCol ,endRow , endCol);
+        }
+        else{
+             return isThereClearPathDiagonal(startRow ,startCol ,endRow , endCol);
+        }
+    }
     public boolean isThereClearPathHorizontal(int startRow , int startCol , int endRow , int endCol  ) {
         for (int i = Math.min(startCol, endCol) ; i < Math.max(startCol, endCol)-1; i++) {
             if(this.board[startRow][i+1]!=null ){

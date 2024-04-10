@@ -130,21 +130,35 @@ public class BoardTest {
 
     //isThereClearPathDiagonalQ1True
     @Test
-    public void  isThereClearPathDiagonalQ1True() {
+    public void  isThereClearPathDiagonalAllTrue() {
         // TODO: 
         Board board = new Board();
         Piece rook = new Rook('♜',ChessColor.Black, "rookQB");
-        int startRow = 0;
-        int startCol = 2;
+        int startRow = 3;
+        int startCol = 3;
         board.placePiece(startRow,startCol,rook);
-        assertTrue(board.isThereClearPathVertical(startRow,startCol,3,2));
+        assertTrue(board.isThereClearPathDiagonal(startRow,startCol,1,1));
+        assertTrue(board.isThereClearPathDiagonal(startRow,startCol,1,5));
+        assertTrue(board.isThereClearPathDiagonal(startRow,startCol,5,1));
+        assertTrue(board.isThereClearPathDiagonal(startRow,startCol,5,5));
     }
-    //isThereClearPathDiagonalQ2True
-    //isThereClearPathDiagonalQ3True
-    //isThereClearPathDiagonalQ4True
 
-    //isThereClearPathDiagonalQ1False
-    //isThereClearPathDiagonalQ2False
-    //isThereClearPathDiagonalQ3False
-    //isThereClearPathDiagonalQ4False
+    @Test
+    public void  isThereClearPathDiagonalAllFalse() {
+        // TODO:
+        Board board = new Board();
+        Piece rook = new Rook('♜',ChessColor.Black, "rookQB");
+        int startRow = 3;
+        int startCol = 3;
+        board.placePiece(startRow,startCol,rook);
+        board.placePiece(2,2,new Rook('♜',ChessColor.Black, "rookQB"));
+        board.placePiece(4,2,new Rook('♜',ChessColor.Black, "rookQB"));
+        board.placePiece(4,4,new Rook('♜',ChessColor.Black, "rookQB"));
+        board.placePiece(2,4,new Rook('♜',ChessColor.Black, "rookQB"));
+        assertFalse(board.isThereClearPathDiagonal(startRow,startCol,1,1));
+        assertFalse(board.isThereClearPathDiagonal(startRow,startCol,1,5));
+        assertFalse(board.isThereClearPathDiagonal(startRow,startCol,5,1));
+        assertFalse(board.isThereClearPathDiagonal(startRow,startCol,5,5));
+    }
+
 }
