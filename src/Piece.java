@@ -19,7 +19,7 @@ public abstract class Piece {
         return Character.toString(symbol);
     }
 
-    public abstract boolean canMove(Move move);
+    public abstract boolean canMove(Move move, Board board);
 
     @Override
     public boolean equals(Object o) {

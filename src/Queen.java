@@ -4,13 +4,13 @@ public class Queen extends Piece{
     }
 
     @Override
-    public boolean canMove(Move move) {
-        if ((move.currentY == move.nextY)&&(move.currentX != move.nextX) ||
+    public boolean canMove(Move move, Board board) {
+        return board.isThereClearPath(move) && (move.currentY == move.nextY)&&(move.currentX != move.nextX) ||
                 (move.currentX == move.nextX)&&(move.currentY != move.nextY) ||
-                (Math.abs(move.nextX - move.currentX)==Math.abs(move.nextY - move.currentY))){
-            return true;
-        }
-        return false;
+                (Math.abs(move.nextX - move.currentX)==Math.abs(move.nextY - move.currentY));
+
+
+
     }
 
     // can move in any direction in a clear path mainly diagonally or orthogonal

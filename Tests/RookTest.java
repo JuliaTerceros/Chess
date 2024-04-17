@@ -9,7 +9,7 @@ public class RookTest {
         Piece rook = new Rook('\u2656',ChessColor.White, "rookQW");
         board.placePiece(3,3,rook);
 
-        assertTrue(rook.canMove(new Move(3,3,3,2,ChessColor.White)));
+        assertTrue(rook.canMove(new Move(3,3,3,2,ChessColor.White), board));
 
     }
 }

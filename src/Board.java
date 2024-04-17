@@ -46,14 +46,18 @@ public class Board {
 
 
 
+
     //isEmptyPosition(int x, int y)
     public boolean isEmptyPosition(int x, int y) {
         return this.board[x][y]==null;
     }
-    //TO DO: WOrking on getting piece from board
+
     public Piece getPiece(int row, int col){
         return board[row][col];
+    }
 
+    public boolean isOpponentPieceThere(int row, int col, ChessColor color){
+        return board[row][col].color != color;
     }
 
 
@@ -106,7 +110,11 @@ public class Board {
 
     //isThereClearPath
 
-    public boolean isThereClearPath(int startRow , int startCol , int endRow , int endCol){
+    public boolean isThereClearPath(Move move){
+        int startRow = move.currentX;
+        int startCol= move.currentY;
+        int endRow = move.nextX;
+        int endCol = move.nextY;
         if ( startCol == endCol && startRow != endRow){
              return isThereClearPathVertical(startRow ,startCol ,endRow , endCol);
         }

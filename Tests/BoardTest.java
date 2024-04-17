@@ -145,7 +145,6 @@ public class BoardTest {
 
     @Test
     public void  isThereClearPathDiagonalAllFalse() {
-        // TODO:
         Board board = new Board();
         Piece rook = new Rook('♜',ChessColor.Black, "rookQB");
         int startRow = 3;

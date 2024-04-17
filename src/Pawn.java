@@ -4,13 +4,49 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean canMove(Move move) {
-        if (move.color == ChessColor.Black && move.nextX == move.currentX && (move.nextY-move.currentY) == 1 ||
-        move.color == ChessColor.White && move.nextX == move.currentX && (move.nextY-move.currentY)== -1 ) {
+    public boolean canMove(Move move, Board board) {
+        ChessColor currentColor = board.getPiece(move.currentX, move.currentY).color;
+
+        //Check Direction of the Movement
+        if (!((currentColor == ChessColor.White && move.nextX < move.currentX)
+                || (currentColor == ChessColor.Black && move.nextX > move.currentX))) {
+            return false;
+        }
+
+
+
+        //This is moving diagonal (only applies when capturing other piece)
+        int differenceRow = Math.abs(move.currentX - move.nextX);
+        int differenceCol = Math.abs(move.currentY - move.nextY);
+
+
+        if (differenceRow == differenceCol){
+            if (differenceCol > 1) {
+                return false;
+            } else if (differenceCol == 1) {
+                return board.isEmptyPosition(move.nextX, move.nextY) &&
+                        board.isOpponentPieceThere(move.nextX, move.nextY, currentColor);
+
+            }
+        }
+
+
+
+
+        //This is moving vertical
+        if (!board.isEmptyPosition(move.nextX, move.nextY)){
+            return false;
+        }
+
+        if (move.color == ChessColor.Black && move.nextY == move.currentY && (move.nextX-move.currentX) == 1 ||
+        move.color == ChessColor.White && move.nextY == move.currentY && (move.nextX-move.currentX) == -1 ) {
             return true;
 
-        } else if (move.color == ChessColor.Black && (move.nextX == move.currentX) && move.currentX == 1 && (move.nextY-move.currentY) == 2 ||
-                move.color == ChessColor.White && (move.nextX == move.currentX) && move.currentX == 6 && (move.nextY-move.currentY)== -2 ) {
+        } else if ( board.isThereClearPath(move) &&
+                (move.color == ChessColor.Black && (move.nextY == move.currentY) && move.currentX == 1
+                        && (move.nextX-move.currentX) == 2 ||
+                move.color == ChessColor.White && (move.nextY == move.currentY) && move.currentX == 6 &&
+                        (move.nextX-move.currentX)== -2 )) {
             return true;
 
         }
@@ -18,12 +54,5 @@ public class Pawn extends Piece {
     }
 
 
-
-
-    //if first turn, then can move 2 tiles forward
-    //if not, then can move only 1 tile forward
-
-    //First move for white pawn in row 6
-    //move black pawn in row 1
 
 }

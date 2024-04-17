@@ -4,13 +4,10 @@ public class King extends Piece{
     }
 
     @Override
-    public boolean canMove(Move move) {
-        if ((move.currentY == move.nextY) && (Math.abs(move.nextX - move.currentX) == 1) ||
+    public boolean canMove(Move move, Board board) {
+        return ((move.currentY == move.nextY) && (Math.abs(move.nextX - move.currentX) == 1) ||
                 (move.currentX == move.nextX) && (Math.abs(move.nextY - move.currentY) == 1) ||
-                (Math.abs(move.nextX - move.currentX) == 1) && (Math.abs(move.nextY - move.currentY) == 1)) {
-            return true;
-        }
-        return false;
+                (Math.abs(move.nextX - move.currentX) == 1) && (Math.abs(move.nextY - move.currentY) == 1));
     }
 
     //TO DO: Make king so that it cannot move to a place where it's in danger

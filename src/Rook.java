@@ -5,12 +5,10 @@ public class Rook extends Piece{
     }
 
     @Override
-    public boolean canMove(Move move) {
-        if ((move.currentY == move.nextY)&&(move.currentX != move.nextX) ||
-                (move.currentX == move.nextX)&&(move.currentY != move.nextY)){
-            return true;
-        }
-        return false;
+    public boolean canMove(Move move, Board board) {
+        return board.isThereClearPath(move) && (move.currentY == move.nextY)&&(move.currentX != move.nextX) ||
+                (move.currentX == move.nextX)&&(move.currentY != move.nextY);
+
     }
 
 }

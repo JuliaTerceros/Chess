@@ -4,7 +4,7 @@ public class Knight extends Piece{
     }
 
     @Override
-    public boolean canMove(Move move) {
+    public boolean canMove(Move move, Board board) {
         if ((Math.abs(move.nextY - move.currentY) == 2 && Math.abs(move.nextX - move.currentX) == 1) ||
                 Math.abs(move.nextY - move.currentY) == 1 && Math.abs(move.nextX - move.currentX) == 2){
             return true;
