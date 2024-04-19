@@ -5,15 +5,13 @@ public class Pawn extends Piece {
 
     @Override
     public boolean canMove(Move move, Board board) {
-        ChessColor currentColor = board.getPiece(move.currentX, move.currentY).color;
+        ChessColor currentColor = move.color;
 
         //Check Direction of the Movement
         if (!((currentColor == ChessColor.White && move.nextX < move.currentX)
                 || (currentColor == ChessColor.Black && move.nextX > move.currentX))) {
             return false;
         }
-
-
 
         //This is moving diagonal (only applies when capturing other piece)
         int differenceRow = Math.abs(move.currentX - move.nextX);
@@ -24,9 +22,10 @@ public class Pawn extends Piece {
             if (differenceCol > 1) {
                 return false;
             } else if (differenceCol == 1) {
-                return board.isEmptyPosition(move.nextX, move.nextY) &&
-                        board.isOpponentPieceThere(move.nextX, move.nextY, currentColor);
-
+                if (board.isEmptyPosition(move.nextX, move.nextY)){
+                    return false;
+                }
+                return board.isOpponentPieceThere(move.nextX, move.nextY, currentColor);
             }
         }
 
