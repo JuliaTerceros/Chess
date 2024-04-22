@@ -18,7 +18,7 @@ public class PawnTest {
     @Test
     public void canMoveTrue(){
         Board board = new Board();
-        Piece pawn  = new Pawn('\u2659', ChessColor.White, "pawnAW");
+        Piece pawn  = new Pawn('♙', ChessColor.White, "pawnAW");
         board.placePiece(3,3,pawn);
 
         assertTrue(pawn.canMove(new Move(3,3,2,3,ChessColor.White), board));
@@ -28,7 +28,7 @@ public class PawnTest {
     public void moveVerticalOneTrue(){
         Board board = new Board();
         ChessColor color = ChessColor.White;
-        Piece pawn  = new Pawn('\u2659', color, "pawnAW");
+        Piece pawn  = new Pawn('♙', color, "pawnAW");
         int startRow = 3;
         int startCol = 3;
         int endRow = 2 ;
@@ -38,7 +38,7 @@ public class PawnTest {
 
         board = new Board();
         color = ChessColor.Black;
-        Piece pawn2  = new Pawn('\u2659', color, "pawnAW");
+        Piece pawn2  = new Pawn('♙', color, "pawnAW");
         startRow = 3;
         startCol = 3;
         endRow = 4 ;
@@ -53,7 +53,7 @@ public class PawnTest {
     public void moveVerticalTwoTrue(){
         Board board = new Board();
         ChessColor color = ChessColor.White;
-        Piece pawn  = new Pawn('\u2659', color, "pawnAW");
+        Piece pawn  = new Pawn('♙', color, "pawnAW");
         int startRow = 6;
         int startCol = 0;
         int endRow = 4 ;
@@ -63,7 +63,7 @@ public class PawnTest {
 
         board = new Board();
         color = ChessColor.Black;
-        Piece pawn2  = new Pawn('\u2659', color, "pawnAW");
+        Piece pawn2  = new Pawn('♙', color, "pawnAW");
         startRow = 1;
         startCol = 0;
         endRow = 3 ;
@@ -179,7 +179,7 @@ public class PawnTest {
         assertTrue(pawn.canMove(new Move(startRow, startCol, endRow,endCol,color), board));
     }
 
-    @Test public void moveDigonalWhiteFalse(){
+    @Test public void moveDiagonalWhiteFalse(){
         Board board = new Board();
         ChessColor color = ChessColor.White;
         Piece pawn  = new Pawn('\u2659', color, "pawnAW");
@@ -202,7 +202,7 @@ public class PawnTest {
 
     }
 
-    
+
 
 
 

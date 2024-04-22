@@ -104,7 +104,29 @@ public class Board {
 
     }
 
+    public void removePiece(int x, int y){
+        this.board[x][y] = null;
+    }
+
+
     //TO DO: If pawn reaches end, change to queen
+    public void changePawnToQueen(Pawn pawn, Move move, Board board){
+
+
+        if (pawn.pawnAtEnd(move, board)){
+            removePiece(move.currentX, move.currentY);
+            placePiece(move.currentX, move.currentY, pawn);
+
+
+
+
+        }
+    }
+
+
+
+
+
 
     //apply move
 

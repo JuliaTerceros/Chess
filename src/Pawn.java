@@ -53,5 +53,19 @@ public class Pawn extends Piece {
     }
 
 
+    //if reaches end of other side, piece changes to Queen
 
-}
+    public boolean pawnAtEnd(Move move, Board board){
+        int endRow = move.nextX;
+
+        if (board.isThereClearPath(move) && move.color == ChessColor.Black && endRow == 7){
+            return true;
+
+        }else if (board.isThereClearPath(move) && move.color == ChessColor.White && endRow == 0){
+            return true;
+        }
+        return false;
+
+        }
+
+    }

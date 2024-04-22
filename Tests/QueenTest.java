@@ -12,4 +12,7 @@ public class QueenTest {
         assertTrue(queen.canMove(new Move(3,3,3,2,ChessColor.White), board));
 
     }
+
+    @Test
+
 }
