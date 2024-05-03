@@ -6,10 +6,10 @@ public class BoardTest {
     @Test
     public void testDisplayingBoard(){
         Board board = new Board();
-
-        String actual = board.displayBoard();
+        String expected = "";
+        String actual = board.toString();
         System.out.println(actual);
-//        assertEquals()
+//        assertEquals(expected,actual);
     }
 
     @Test
@@ -159,5 +159,28 @@ public class BoardTest {
         assertFalse(board.isThereClearPathDiagonal(startRow,startCol,5,1));
         assertFalse(board.isThereClearPathDiagonal(startRow,startCol,5,5));
     }
+
+    @Test
+    public void setUpboardTest(){
+        Board test = new Board();
+        test.setUpBoard();
+
+        String actual = test.toString();
+        System.out.println(actual);
+    }
+
+    //remove Piece
+
+    @Test
+    public void removePieceTest(){
+        Board test = new Board();
+        test.setUpBoard();
+        test.removePiece(1,0);
+        assertNull(test.getPiece(1,0));
+        test.displayBoard();
+
+    }
+
+
 
 }

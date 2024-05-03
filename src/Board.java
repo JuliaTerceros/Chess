@@ -63,8 +63,10 @@ public class Board {
 
 
 //Displays Board
-
-    public String displayBoard(){
+  public void displayBoard(){
+      System.out.println(this.toString());
+  }
+    public String toString(){
 //        System.out.println("|---|---|---|---|---|---|---|---|");
 //        System.out.println("| "+ this.board[0][0].toString() + " | " + this.board[0][1].toString() + " | " + this.board[0][2].toString() + " | " + this.board[0][3].toString()+ " | " + this.board[0][4].toString() + " | " + this.board[0][5].toString()+ " | "+ this.board[0][6].toString() + " | "+ this.board[0][7].toString() +" |");
 //        System.out.println("|-------------------------------|");
