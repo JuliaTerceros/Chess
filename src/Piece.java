@@ -9,13 +9,13 @@ public abstract class Piece {
     char symbol;
 
 
-    public Piece (char symbol, ChessColor color, String id) {
+    public Piece(char symbol, ChessColor color, String id) {
         this.symbol = symbol;
         this.color = color;
         this.id = id;
     }
 
-    public String toString(){
+    public String toString() {
         return Character.toString(symbol);
     }
 

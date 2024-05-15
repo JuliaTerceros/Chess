@@ -8,11 +8,5 @@ public class Queen extends Piece{
         return board.isThereClearPath(move) && (move.currentY == move.nextY)&&(move.currentX != move.nextX) ||
                 (move.currentX == move.nextX)&&(move.currentY != move.nextY) ||
                 (Math.abs(move.nextX - move.currentX)==Math.abs(move.nextY - move.currentY));
-
-
-
     }
-
-    // can move in any direction in a clear path mainly diagonally or orthogonal
-
 }

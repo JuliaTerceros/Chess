@@ -18,11 +18,11 @@ public class Pawn extends Piece {
         int differenceCol = Math.abs(move.currentY - move.nextY);
 
 
-        if (differenceRow == differenceCol){
+        if (differenceRow == differenceCol) {
             if (differenceCol > 1) {
                 return false;
             } else if (differenceCol == 1) {
-                if (board.isEmptyPosition(move.nextX, move.nextY)){
+                if (board.isEmptyPosition(move.nextX, move.nextY)) {
                     return false;
                 }
                 return board.isOpponentPieceThere(move.nextX, move.nextY, currentColor);
@@ -30,22 +30,20 @@ public class Pawn extends Piece {
         }
 
 
-
-
         //This is moving vertical
-        if (!board.isEmptyPosition(move.nextX, move.nextY)){
+        if (!board.isEmptyPosition(move.nextX, move.nextY)) {
             return false;
         }
 
-        if (move.color == ChessColor.Black && move.nextY == move.currentY && (move.nextX-move.currentX) == 1 ||
-        move.color == ChessColor.White && move.nextY == move.currentY && (move.nextX-move.currentX) == -1 ) {
+        if (move.color == ChessColor.Black && move.nextY == move.currentY && (move.nextX - move.currentX) == 1 ||
+                move.color == ChessColor.White && move.nextY == move.currentY && (move.nextX - move.currentX) == -1) {
             return true;
 
-        } else if ( board.isThereClearPath(move) &&
+        } else if (board.isThereClearPath(move) &&
                 (move.color == ChessColor.Black && (move.nextY == move.currentY) && move.currentX == 1
-                        && (move.nextX-move.currentX) == 2 ||
-                move.color == ChessColor.White && (move.nextY == move.currentY) && move.currentX == 6 &&
-                        (move.nextX-move.currentX)== -2 )) {
+                        && (move.nextX - move.currentX) == 2 ||
+                        move.color == ChessColor.White && (move.nextY == move.currentY) && move.currentX == 6 &&
+                                (move.nextX - move.currentX) == -2)) {
             return true;
 
         }
@@ -55,17 +53,17 @@ public class Pawn extends Piece {
 
     //if reaches end of other side, piece changes to Queen
 
-    public boolean pawnAtEnd(Move move, Board board){
+    public boolean pawnAtEnd(Move move, Board board) {
         int endRow = move.nextX;
 
-        if (board.isThereClearPath(move) && move.color == ChessColor.Black && endRow == 7){
+        if (board.isThereClearPath(move) && move.color == ChessColor.Black && endRow == 7) {
             return true;
 
-        }else if (board.isThereClearPath(move) && move.color == ChessColor.White && endRow == 0){
+        } else if (board.isThereClearPath(move) && move.color == ChessColor.White && endRow == 0) {
             return true;
         }
         return false;
 
-        }
-
     }
+
+}
