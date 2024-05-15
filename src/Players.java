@@ -28,37 +28,37 @@ public class Players {
         int endRow;
         int endCol;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter starting Row");
+        System.out.println("Enter starting Row (a number between 0 and 7)");
         startRow = scanner.nextInt();
-        System.out.println("Enter starting Column");
+        System.out.println("Enter starting Column (a number between 0 and 7)");
         startCol = scanner.nextInt();
-        System.out.println("Enter next Row");
+        System.out.println("Enter next Row (a number between 0 and 7)");
         endRow = scanner.nextInt();
-        System.out.println("Enter next Column");
+        System.out.println("Enter next Column (a number between 0 and 7)");
         endCol = scanner.nextInt();
 
         while (!(startRow >= 0 && startRow <= 7 && startCol >= 0 && startCol <= 7 &&
                 endRow >= 0 && endRow <= 7 && endCol >= 0 && endCol <= 7)) {
             System.out.println("Please enter numbers between 0 and 7.");
-            System.out.println("Enter starting Row");
+            System.out.println("Enter starting Row (a number between 0 and 7)");
             startRow = scanner.nextInt();
-            System.out.println("Enter starting Column");
+            System.out.println("Enter starting Column (a number between 0 and 7)");
             startCol = scanner.nextInt();
-            System.out.println("Enter next Row");
+            System.out.println("Enter next Row (a number between 0 and 7)");
             endRow = scanner.nextInt();
-            System.out.println("Enter next Column");
+            System.out.println("Enter next Column (a number between 0 and 7)");
             endCol = scanner.nextInt();
         }
 
         while (startRow == endRow && startCol == endCol) {
             System.out.println("Please enter different starting and ending location.");
-            System.out.println("Enter starting Row");
+            System.out.println("Enter starting Row (a number between 0 and 7)");
             startRow = scanner.nextInt();
-            System.out.println("Enter starting Column");
+            System.out.println("Enter starting Column (a number between 0 and 7)");
             startCol = scanner.nextInt();
-            System.out.println("Enter next Row");
+            System.out.println("Enter next Row (a number between 0 and 7)");
             endRow = scanner.nextInt();
-            System.out.println("Enter next Column");
+            System.out.println("Enter next Column (a number between 0 and 7)");
             endCol = scanner.nextInt();
         }
 
